@@ -12,6 +12,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - run: echo Buidling TODO
+  linter:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v2
       - name: Kotlin Linter Check
         uses: vroy/gha-kotlin-linter@v2
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: JUnit Report Action
+        uses: mikepenz/action-junit-report@v2
