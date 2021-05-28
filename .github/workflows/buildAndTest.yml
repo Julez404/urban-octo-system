@@ -1,0 +1,33 @@
+name: Pull Request Validation
+
+on:
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build project
+      uses: eskatos/gradle-command-action@v1.3.3
+      with:
+        arguments: build
+    - name: JUnit Report Action
+      if: always()
+      uses: mikepenz/action-junit-report@v2
+      with:
+        report_paths: 'build/test-results/test/TEST-*.xml'
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: Build-Archive
+        path: build
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Kotlin Linter Check
+        uses: vroy/gha-kotlin-linter@v2
