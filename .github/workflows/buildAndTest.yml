@@ -3,7 +3,8 @@ name: Pull Request Validation
 on:
   pull_request:
     branches: [ master ]
-
+  push:
+    branches: [ dev ]
   workflow_dispatch:
 
 jobs:
