@@ -23,7 +23,7 @@ jobs:
       uses: actions/upload-artifact@v2.2.3
       with:
         name: Build-Archive
-        path: .
+        path: build
   linter:
     runs-on: ubuntu-latest
     steps:
