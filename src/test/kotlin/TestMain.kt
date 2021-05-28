@@ -3,9 +3,9 @@ import org.junit.jupiter.api.assertDoesNotThrow
 import org.junit.jupiter.api.assertThrows
 import kotlin.IllegalArgumentException
 
-class MainTest {
+class TestMain {
     @Test
-    fun MainLoopThrowsIllegalArgumentException() {
+    fun mainLoopThrowsIllegalArgumentException() {
         assertThrows<IllegalArgumentException> {
             val strings = arrayOf("January", "February", "March")
             main(strings)
@@ -13,7 +13,7 @@ class MainTest {
     }
 
     @Test
-    fun MainLoopDoesNotThrowsIllegalArgumentException() {
+    fun mainLoopDoesNotThrowsIllegalArgumentException() {
         assertDoesNotThrow {
             val strings = emptyArray<String>()
             main(strings)
