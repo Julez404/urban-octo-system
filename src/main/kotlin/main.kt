@@ -1,7 +1,7 @@
 @Throws(IllegalArgumentException::class)
 fun main(args: Array<String>) {
-    if(args.size != 0) {
-        for(str in args)
+    if (args.size != 0) {
+        for (str in args)
             println(str)
         throw IllegalArgumentException()
     }

@@ -5,16 +5,16 @@ import kotlin.IllegalArgumentException
 
 class MainTest {
     @Test
-    fun MainLoopThrowsIllegalArgumentException()  {
-        assertThrows<IllegalArgumentException>{
+    fun MainLoopThrowsIllegalArgumentException() {
+        assertThrows<IllegalArgumentException> {
             val strings = arrayOf("January", "February", "March")
             main(strings)
         }
     }
 
     @Test
-    fun MainLoopDoesNotThrowsIllegalArgumentException()  {
-        assertDoesNotThrow{
+    fun MainLoopDoesNotThrowsIllegalArgumentException() {
+        assertDoesNotThrow {
             val strings = emptyArray<String>()
             main(strings)
         }
