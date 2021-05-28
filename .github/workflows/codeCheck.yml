@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build project
-    - uses: eskatos/gradle-command-action@v1.3.3
+      uses: eskatos/gradle-command-action@v1.3.3
     - name: JUnit Report Action
       uses: mikepenz/action-junit-report@v2
   linter:
