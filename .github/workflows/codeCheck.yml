@@ -17,10 +17,14 @@ jobs:
         arguments: build
     - name: JUnit Report Action
       uses: mikepenz/action-junit-report@v2
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: Build-Archive
+        path: .
   linter:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Kotlin Linter Check
         uses: vroy/gha-kotlin-linter@v2
-        
