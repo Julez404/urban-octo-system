@@ -1,34 +1,33 @@
-import org.junit.Test
 import kotlin.test.assertEquals
 
 public class CalculatorTest {
     @org.junit.Test
-    fun SumOfPositiveNumbers() {
+    fun sumOfPositiveNumbers() {
         val calculator = Calculator()
 
-        assertEquals(4, calculator.Add(2,2))
-        assertEquals(266, calculator.Add(10,256))
-        assertEquals(9000, calculator.Add(0,9000))
-        assertEquals(180000, calculator.Add(90000,90000))
+        assertEquals(4, calculator.add(2,2))
+        assertEquals(266, calculator.add(10,256))
+        assertEquals(9000, calculator.add(0,9000))
+        assertEquals(180000, calculator.add(90000,90000))
     }
 
     @org.junit.Test
-    fun SumOfNegativeNumbers() {
+    fun sumOfNegativeNumbers() {
         val calculator = Calculator()
 
-        assertEquals(-4, calculator.Add(-2,-2))
-        assertEquals(-266, calculator.Add(-10,-256))
-        assertEquals(-9000, calculator.Add(-0,-9000))
-        assertEquals(-180000, calculator.Add(-90000,-90000))
+        assertEquals(-4, calculator.add(-2,-2))
+        assertEquals(-266, calculator.add(-10,-256))
+        assertEquals(-9000, calculator.add(-0,-9000))
+        assertEquals(-180000, calculator.add(-90000,-90000))
     }
 
     @org.junit.Test
-    fun SumOfPositiveAndNegativeNumbers() {
+    fun sumOfPositiveAndNegativeNumbers() {
         val calculator = Calculator()
 
-        assertEquals(0, calculator.Add(-2,2))
-        assertEquals(-246, calculator.Add(10,-256))
-        assertEquals(-9000, calculator.Add(0,-9000))
-        assertEquals(0, calculator.Add(-90000,90000))
+        assertEquals(0, calculator.add(-2,2))
+        assertEquals(-246, calculator.add(10,-256))
+        assertEquals(-9000, calculator.add(0,-9000))
+        assertEquals(0, calculator.add(-90000,90000))
     }
 }
