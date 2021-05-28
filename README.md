@@ -1,4 +1,4 @@
-[![Latest Pull Request](https://github.com/Julez404/urban-octo-system/actions/workflows/buildAndTest.yml/badge.svg)](https://github.com/Julez404/urban-octo-system/actions/workflows/buildAndTest.yml)
+[![Latest Pull Request](https://github.com/Julez404/urban-octo-system/actions/workflows/buildAndTest.yml/badge.svg)](https://github.com/Julez404/urban-octo-system/actions/workflows/buildAndTest.yml) [![codecov](https://codecov.io/gh/Julez404/urban-octo-system/branch/master/graph/badge.svg?token=EF6V01NSD8)](https://codecov.io/gh/Julez404/urban-octo-system)
 
 # urban-octo-system
 
