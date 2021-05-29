@@ -4,8 +4,8 @@ class Stack {
     private val elements: MutableList<Int> = mutableListOf()
 
     @Throws(BufferUnderflowException::class)
-    fun pop(): Int{
-        if(elements.isEmpty())
+    fun pop(): Int {
+        if (elements.isEmpty())
             throw BufferUnderflowException()
         var retVal = elements.last()
         var delete = elements.last()
@@ -13,8 +13,8 @@ class Stack {
         return retVal
     }
 
-    fun push(element: Int){
-        elements.add (element)
+    fun push(element: Int) {
+        elements.add(element)
     }
 
     fun isEmpty(): Boolean {

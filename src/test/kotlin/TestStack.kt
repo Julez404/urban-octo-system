@@ -8,8 +8,7 @@ class TestStack {
     var stack = Stack()
 
     @BeforeEach
-    fun createStackObj()
-    {
+    fun createStackObj() {
         stack = Stack()
     }
 

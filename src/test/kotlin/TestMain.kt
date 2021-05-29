@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertDoesNotThrow
 import org.junit.jupiter.api.assertThrows
-import kotlin.IllegalArgumentException
 
 class TestMain {
     @Test

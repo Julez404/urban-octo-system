@@ -1,5 +1,3 @@
-import Stack
-
 @Throws(IllegalArgumentException::class)
 fun main(args: Array<String>) {
     if (args.size != 0) {

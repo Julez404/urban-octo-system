@@ -27,9 +27,12 @@ class TestInstruction() {
 
     @Test
     fun InstructionDataIsExpectedData() {
-        Assertions.assertEquals("0000", Instruction(":020000040000FA").getData())
-        Assertions.assertEquals("F23F", Instruction(":02400E00F23F7F").getData())
-        Assertions.assertEquals("920A851811281208031D17281A280610", Instruction(":10002000920A851811281208031D17281A2806108D").getData()
+
+        Assertions.assertEquals(listOf<Short>(0, 0), Instruction(":020000040000FA").getData())
+        Assertions.assertEquals(listOf<Short>(242, 63), Instruction(":02400E00F23F7F").getData())
+        Assertions.assertEquals(
+            listOf<Short>(146, 10, 133, 24, 17, 40, 18, 8, 3, 29, 23, 40, 26, 40, 6, 16),
+            Instruction(":10002000920A851811281208031D17281A2806108D").getData()
         )
     }
 }
