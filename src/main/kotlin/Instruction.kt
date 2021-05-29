@@ -13,8 +13,17 @@ class Instruction(initString: String) {
         return true
     }
 
-    fun getData(): String {
-        return instructionString.substring(startIndex = 9, 9 + 2 * getDataLength())
+    fun getData(): List<Short> {
+        var blockArray: MutableList<String> = mutableListOf()
+        for (i in 9..8 + 2 * getDataLength() step 2) {
+            blockArray.add(instructionString.substring(startIndex = i, i + 2))
+        }
+
+        var retVal: MutableList<Short> = mutableListOf()
+        for (str in blockArray) {
+            retVal.add(str.toShort(16))
+        }
+        return retVal.toList()
     }
 
     fun getDataLength(): Int {
