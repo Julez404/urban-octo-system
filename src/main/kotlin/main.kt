@@ -6,4 +6,7 @@ fun main(args: Array<String>) {
         throw IllegalArgumentException()
     }
     println("Hello?")
+
+    println("Create a Stack")
+    val stack = Stack()
 }

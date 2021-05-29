@@ -1,7 +1,7 @@
-import kotlin.test.assertEquals
 import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
-public class CalculatorTest {
+public class TestCalculator {
     @Test
     fun sumOfPositiveNumbers() {
         val calculator = Calculator()
