@@ -18,6 +18,6 @@ class Stack {
     }
 
     fun isEmpty(): Boolean {
-        return elements.isEmpty();
+        return elements.isEmpty()
     }
 }

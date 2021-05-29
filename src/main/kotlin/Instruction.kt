@@ -9,7 +9,7 @@ class Instruction(initString: String) {
     }
 
     private fun checksumIsValid(): Boolean {
-        //var checksumRaw = getDataLength() + getAddress() + getData()
+        // var checksumRaw = getDataLength() + getAddress() + getData()
         return true
     }
 
