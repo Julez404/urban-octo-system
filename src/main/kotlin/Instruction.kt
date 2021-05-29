@@ -1,5 +1,3 @@
-import com.ibm.dtfj.java.JavaVMInitArgs
-
 class Instruction(initString: String) {
     val instructionString: String
 
@@ -17,7 +15,8 @@ class Instruction(initString: String) {
     }
 
     private fun calculateChecksum(): UByte {
-        var sum: UByte = (getSumOfAddress() + getSumOfData() + getDataLength().toUByte() + getType().toUByte()).toUByte()
+        var sum: UByte =
+            (getSumOfAddress() + getSumOfData() + getDataLength().toUByte() + getType().toUByte()).toUByte()
         return get2ndComplement(sum)
     }
 

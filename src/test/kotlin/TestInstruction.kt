@@ -57,8 +57,7 @@ class TestInstruction() {
 
     @Test
     fun NoExceptionOnCorrectChecksum() {
-        assertDoesNotThrow()
-        {
+        assertDoesNotThrow() {
             Instruction(":020000040000FA")
             Instruction(":1000300086141C2886100614092808009000030E58")
         }
