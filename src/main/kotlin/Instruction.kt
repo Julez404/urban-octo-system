@@ -11,6 +11,10 @@ class Instruction(initString: String) {
     private fun checksumIsValid(): Boolean {
         // var checksumRaw = getDataLength() + getAddress() + getData()
         return true
+
+    private fun getChecksum(): Int {
+        val length = instructionString.length
+        return instructionString.substring(startIndex = length - 2, length).toInt(16)
     }
 
     fun getData(): List<Short> {
