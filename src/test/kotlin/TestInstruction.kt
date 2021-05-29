@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertDoesNotThrow
 
 class TestInstruction() {
 
@@ -28,12 +30,48 @@ class TestInstruction() {
     @Test
     fun InstructionDataIsExpectedData() {
 
-        Assertions.assertEquals(listOf<Short>(0, 0), Instruction(":020000040000FA").getData())
-        Assertions.assertEquals(listOf<Short>(242, 63), Instruction(":02400E00F23F7F").getData())
+        Assertions.assertEquals(listOf<UByte>(0.toUByte(), 0.toUByte()), Instruction(":020000040000FA").getData())
+        Assertions.assertEquals(listOf<UByte>(242.toUByte(), 63.toUByte()), Instruction(":02400E00F23F7F").getData())
         Assertions.assertEquals(
-            listOf<Short>(146, 10, 133, 24, 17, 40, 18, 8, 3, 29, 23, 40, 26, 40, 6, 16),
+            listOf<UByte>(
+                146.toUByte(),
+                10.toUByte(),
+                133.toUByte(),
+                24.toUByte(),
+                17.toUByte(),
+                40.toUByte(),
+                18.toUByte(),
+                8.toUByte(),
+                3.toUByte(),
+                29.toUByte(),
+                23.toUByte(),
+                40.toUByte(),
+                26.toUByte(),
+                40.toUByte(),
+                6.toUByte(),
+                16.toUByte()
+            ),
             Instruction(":10002000920A851811281208031D17281A2806108D").getData()
         )
+    }
+
+    @Test
+    fun NoExceptionOnCorrectChecksum() {
+        assertDoesNotThrow()
+        {
+            Instruction(":020000040000FA")
+            Instruction(":1000300086141C2886100614092808009000030E58")
+        }
+    }
+
+    @Test
+    fun ExceptionOnCreationOnInvalidChecksum() {
+        assertThrows(Instruction.InvalidChecksumException::class.java) {
+            Instruction(":02000004000057")
+        }
+        assertThrows(Instruction.InvalidChecksumException::class.java) {
+            Instruction(":1000300086141C2886100614092808009000030EAB")
+        }
     }
 }
 
