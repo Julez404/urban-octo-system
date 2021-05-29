@@ -72,6 +72,16 @@ class TestInstruction() {
             Instruction(":1000300086141C2886100614092808009000030EAB")
         }
     }
+
+    @Test
+    fun ExceptionOnIlligalCharsInConfigString() {
+        assertThrows(NumberFormatException::class.java) {
+            Instruction(":02T00004000057")
+        }
+        assertThrows(NumberFormatException::class.java) {
+            Instruction(":1P00300086141C288H100614092808009000030EAB")
+        }
+    }
 }
 
 /*
