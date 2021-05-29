@@ -1,8 +1,8 @@
 class Instruction(initString: String) {
-    val instructionString: String
+    private val instructionString: String
 
     init {
-        println("Create Instruction with string: " + initString)
+        println("Create Instruction with string: $initString")
         instructionString = initString
         if (!checksumIsValid())
             throw InvalidChecksumException()
